@@ -1,6 +1,6 @@
 # Farmaceutica
 
-## Caso de Estudio -AE
+## Caso de Estudio - AE
 
 Con el objetivo de mostrar la aplicación de patrones de software, en este documento se hará uso de diferentes diagramas para enseñar la complejidad de los diferentes aspectos que encierra la arquitectura de la solución propuesta, para el ejercicio del Proyecto de Ofertas Farmacéutica La Javeriana. 
 
