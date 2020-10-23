@@ -1,4 +1,5 @@
 # Farmaceutica
+
 ## Caso de Estudio -AE
 
 Con el objetivo de mostrar la aplicación de patrones de software, en este documento se hará uso de diferentes diagramas para enseñar la complejidad de los diferentes aspectos que encierra la arquitectura de la solución propuesta, para el ejercicio del Proyecto de Ofertas Farmacéutica La Javeriana. 
@@ -12,9 +13,11 @@ Algunas de sus actividades comerciales son el desarrollo de manufactura, y la co
 
 En vista de lo anterior, la Farmacéutica Javeriana ha decidido implementar una herramienta tecnológica para ofertar y gestionar los despachos requeridos por las ventas, que involucre los actores del proceso y defina canales de comunicación para los sistemas de los proveedores, y así enfocar los esfuerzos y capacidades de la compañía en el cumplimiento de la misión propuesta. 
 
+
 ## Alcance
 
 Esta solución se restringe a la integración del sistema ERP que actualmente posee la compañía Farmacéutica La Javeriana, junto con la representación de la plataforma de Ofertas.  
+
 
 ## Definiciones, Acrónimos y Abreviaturas
 
