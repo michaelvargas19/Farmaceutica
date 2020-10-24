@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201023051757_sql.cs" />
+    <Compile Remove="Migrations\20201023051757_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201023051859_sql.cs" />
+    <Compile Remove="Migrations\20201023051859_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201023052945_sql.cs" />
+    <Compile Remove="Migrations\20201023052945_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024003142_sql.cs" />
+    <Compile Remove="Migrations\20201024003142_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024041408_sql.cs" />
+    <Compile Remove="Migrations\20201024041408_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024045305_sql.cs" />
+    <Compile Remove="Migrations\20201024045305_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024052101_sql.cs" />
+    <Compile Remove="Migrations\20201024052101_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024060844_sql.cs" />
+    <Compile Remove="Migrations\20201024060844_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024061152_sql.cs" />
+    <Compile Remove="Migrations\20201024061152_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024064757_sql.cs" />
+    <Compile Remove="Migrations\20201024064757_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024064908_sql.cs" />
+    <Compile Remove="Migrations\20201024064908_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024065009_sql.cs" />
+    <Compile Remove="Migrations\20201024065009_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024070032_sql.cs" />
+    <Compile Remove="Migrations\20201024070032_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024070216_sql.cs" />
+    <Compile Remove="Migrations\20201024070216_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024071054_sql.cs" />
+    <Compile Remove="Migrations\20201024071054_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024071304_sql.cs" />
+    <Compile Remove="Migrations\20201024071304_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201024071444_sql.cs" />
+    <Compile Remove="Migrations\20201024071444_sql.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AuthenticationDTO\AutenticacionDTO.csproj" />
+  </ItemGroup>
+
+
+</Project>
