@@ -10,7 +10,7 @@ using serverdespacho.Peristencia;
 namespace serverdespacho.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20201024071805_sql")]
+    [Migration("20201026004645_sql")]
     partial class sql
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -421,6 +421,12 @@ namespace serverdespacho.Migrations
                     b.Property<int>("IdEstado")
                         .HasColumnType("integer");
 
+                    b.Property<int>("IdMunicipioDestino")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("IdMunicipioOrigen")
+                        .HasColumnType("integer");
+
                     b.Property<int>("IdUsuario")
                         .HasColumnType("integer");
 
@@ -431,6 +437,10 @@ namespace serverdespacho.Migrations
                     b.HasKey("IdDespacho");
 
                     b.HasIndex("IdEstado");
+
+                    b.HasIndex("IdMunicipioDestino");
+
+                    b.HasIndex("IdMunicipioOrigen");
 
                     b.HasIndex("IdUsuario");
 
@@ -6594,7 +6604,8 @@ namespace serverdespacho.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<DateTime>("FechaFinalizacion")
+                    b.Property<DateTime?>("FechaFinalizacion")
+                        .IsRequired()
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<DateTime>("FechaPostulacion")
@@ -6654,14 +6665,14 @@ namespace serverdespacho.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "ee80abcf-2767-44a0-9a90-cecb9ebe7d79",
+                            ConcurrencyStamp = "3d48663b-b45b-45a7-9a12-09bca4de465b",
                             Name = "Cliente",
                             NormalizedName = "CLIENTE"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "83673afd-797c-4c30-a988-5e1179949180",
+                            ConcurrencyStamp = "2d1e5dfa-c345-4ff2-b7c2-81ab1913d99d",
                             Name = "Proveedor",
                             NormalizedName = "PROVEEDOR"
                         });
@@ -6869,6 +6880,18 @@ namespace serverdespacho.Migrations
                     b.HasOne("serverdespacho.Entidades.EstadoDespachos", "Estado")
                         .WithMany()
                         .HasForeignKey("IdEstado")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("serverdespacho.Entidades.Municipio", "MunicipioDestino")
+                        .WithMany()
+                        .HasForeignKey("IdMunicipioDestino")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("serverdespacho.Entidades.Municipio", "MunicipioOrigen")
+                        .WithMany()
+                        .HasForeignKey("IdMunicipioOrigen")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

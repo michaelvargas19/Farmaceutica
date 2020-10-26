@@ -1,0 +1,9 @@
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\DespachosDTO\bin\Debug\netcoreapp3.1\DespachosDTO.deps.json
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\DespachosDTO\bin\Debug\netcoreapp3.1\DespachosDTO.dll
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\DespachosDTO\bin\Debug\netcoreapp3.1\DespachosDTO.pdb
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\DespachosDTO\obj\Debug\netcoreapp3.1\DespachosDTO.csprojAssemblyReference.cache
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\DespachosDTO\obj\Debug\netcoreapp3.1\DespachosDTO.AssemblyInfoInputs.cache
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\DespachosDTO\obj\Debug\netcoreapp3.1\DespachosDTO.AssemblyInfo.cs
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\DespachosDTO\obj\Debug\netcoreapp3.1\DespachosDTO.csproj.CoreCompileInputs.cache
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\DespachosDTO\obj\Debug\netcoreapp3.1\DespachosDTO.dll
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\DespachosDTO\obj\Debug\netcoreapp3.1\DespachosDTO.pdb

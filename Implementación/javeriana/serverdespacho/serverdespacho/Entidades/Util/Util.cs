@@ -1,5 +1,8 @@
 ﻿using AutenticacionDTO.DTO;
 using AutenticacionDTO.DTO.Cuentas;
+using DespachosDTO.Despachos;
+using DespachosDTO.Ofertas;
+using Microsoft.CodeAnalysis.CSharp;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -41,6 +44,102 @@ namespace serverdespacho.Entidades.Util
 
             return user;
         }
+
+
+        //------------- [Despachos]
+        public static DespachoDTO obtenerDespachoDTO(Despacho despacho)
+        {
+            DespachoDTO dto = new DespachoDTO();
+            dto.IdDespacho = despacho.IdDespacho;
+            dto.Usuario = despacho.Usuario.FirstName + " " + despacho.Usuario.LastName;
+            dto.Nombre = despacho.Nombre;
+            dto.FechaInicio = despacho.FechaInicio;
+            dto.FechaFinOfertas = despacho.FechaFinOfertas;
+            dto.FechaCierreDespacho = despacho.FechaCierreDespacho;
+            dto.IdEstado = despacho.IdEstado;
+            dto.Estado = despacho.Estado.Nombre;
+            dto.Ofertas = new List<OfertaDTO>();
+
+            foreach (Oferta o in despacho.Ofertas) {
+                dto.Ofertas.Add(getOfertaDTO(o));
+            }
+
+            return dto;
+        }
+
+        public static List<DespachoDTO> obtenerDespachosDTO(List<Despacho> despachos)
+        {
+            List<DespachoDTO> despachosDTO = new List<DespachoDTO>();
+
+            foreach (Despacho d in despachos) {
+                despachosDTO.Add(obtenerDespachoDTO(d));
+            }
+
+            return despachosDTO;
+        }
+
+
+        public static Despacho castDespachoToEntity(DespachoRequest request, Usuario usuario, EstadoDespachos estado)
+        {
+            Despacho despacho = new Despacho();
+            despacho.Nombre = request.Nombre;
+            despacho.Usuario = usuario;
+            despacho.FechaInicio = request.FechaInicio;
+            despacho.FechaFinOfertas = request.FechaFinOfertas;
+            despacho.FechaCierreDespacho = request.FechaCierreDespacho;
+            despacho.Estado = estado;
+            despacho.IdMunicipioOrigen = request.IdMunicipioOrigen;
+            despacho.IdMunicipioDestino = request.IdMunicipioDestino;
+
+            return despacho;
+        }
+
+        //------------- [Ofertas]
+
+        public static OfertaDTO getOfertaDTO(Oferta oferta) {
+            
+            OfertaDTO dto = new OfertaDTO();
+            dto.IdOferta = oferta.IdOferta;
+            dto.Usuario = oferta.Usuario.FirstName +" "+ oferta.Usuario.LastName;
+            dto.FechaPostulacion = oferta.FechaPostulacion;
+            dto.FechaFinalizacion = oferta.FechaFinalizacion;
+            dto.Precio = oferta.Precio;
+            dto.IdEstado = oferta.IdEstado;
+            dto.Estado = oferta.Estado.Nombre;
+            dto.IdDespacho = oferta.IdDespacho;
+            dto.Mensaje = oferta.Despacho.Nombre;
+
+            return dto;
+        }
+
+
+        public static List<OfertaDTO> obtenerOfertasDTO(List<Oferta> ofertas)
+        {
+            List<OfertaDTO> ofertasDTO = new List<OfertaDTO>();
+
+            foreach (Oferta o in ofertas)
+            {
+                ofertasDTO.Add(getOfertaDTO(o));
+            }
+
+            return ofertasDTO;
+        }
+
+
+        public static Oferta castOfertaToEntity(OfertarRequest request, Usuario usuario, EstadoOfertas estado, Despacho despacho)
+        {
+            Oferta oferta = new Oferta();
+            oferta.Usuario = usuario;
+            oferta.FechaPostulacion = DateTime.Now; ;
+            oferta.FechaFinalizacion = null;
+            oferta.Precio = request.Precio;
+            oferta.Estado = estado;
+            oferta.Despacho = despacho;
+            
+            return oferta;
+        }
+
+
 
         #region newLog
         public static AppLogAuthenticacionAPI crearLog(string type, string app, string method, bool isException, Object entity, string message, object parameters)

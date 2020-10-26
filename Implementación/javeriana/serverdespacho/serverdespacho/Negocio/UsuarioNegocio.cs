@@ -57,7 +57,7 @@ namespace serverdespacho.Negocio
             catch (Exception e)
             {
                 
-                DBContext.Log(Util.crearLog("Error", "Despachos", nameof(this.verUsuario), true, this, e.Message, e.StackTrace.ToString()));
+                DBContext.Log(Util.crearLog("Error", "Despachos", nameof(this.verUsuarios), true, this, e.Message, e.StackTrace.ToString()));
             }
             return usuarios;
         }

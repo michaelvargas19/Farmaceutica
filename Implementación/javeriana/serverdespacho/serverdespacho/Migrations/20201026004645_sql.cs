@@ -274,36 +274,6 @@ namespace serverdespacho.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Despachos",
-                columns: table => new
-                {
-                    IdDespacho = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Nombre = table.Column<string>(nullable: false),
-                    IdUsuario = table.Column<int>(nullable: false),
-                    FechaInicio = table.Column<DateTime>(nullable: false),
-                    FechaFinOfertas = table.Column<DateTime>(nullable: false),
-                    FechaCierreDespacho = table.Column<DateTime>(nullable: false),
-                    IdEstado = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Despachos", x => x.IdDespacho);
-                    table.ForeignKey(
-                        name: "FK_Despachos_EstadosDespachos_IdEstado",
-                        column: x => x.IdEstado,
-                        principalTable: "EstadosDespachos",
-                        principalColumn: "IdEstado",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Despachos_AspNetUsers_IdUsuario",
-                        column: x => x.IdUsuario,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Notificaciones",
                 columns: table => new
                 {
@@ -327,6 +297,50 @@ namespace serverdespacho.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Notificaciones_AspNetUsers_IdUsuario",
+                        column: x => x.IdUsuario,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Despachos",
+                columns: table => new
+                {
+                    IdDespacho = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Nombre = table.Column<string>(nullable: false),
+                    IdUsuario = table.Column<int>(nullable: false),
+                    FechaInicio = table.Column<DateTime>(nullable: false),
+                    FechaFinOfertas = table.Column<DateTime>(nullable: false),
+                    FechaCierreDespacho = table.Column<DateTime>(nullable: false),
+                    IdEstado = table.Column<int>(nullable: false),
+                    IdMunicipioOrigen = table.Column<int>(nullable: false),
+                    IdMunicipioDestino = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Despachos", x => x.IdDespacho);
+                    table.ForeignKey(
+                        name: "FK_Despachos_EstadosDespachos_IdEstado",
+                        column: x => x.IdEstado,
+                        principalTable: "EstadosDespachos",
+                        principalColumn: "IdEstado",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Despachos_Municipios_IdMunicipioDestino",
+                        column: x => x.IdMunicipioDestino,
+                        principalTable: "Municipios",
+                        principalColumn: "CodigoDane",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Despachos_Municipios_IdMunicipioOrigen",
+                        column: x => x.IdMunicipioOrigen,
+                        principalTable: "Municipios",
+                        principalColumn: "CodigoDane",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Despachos_AspNetUsers_IdUsuario",
                         column: x => x.IdUsuario,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -411,8 +425,8 @@ namespace serverdespacho.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 2, "83673afd-797c-4c30-a988-5e1179949180", "Proveedor", "PROVEEDOR" },
-                    { 1, "ee80abcf-2767-44a0-9a90-cecb9ebe7d79", "Cliente", "CLIENTE" }
+                    { 2, "2d1e5dfa-c345-4ff2-b7c2-81ab1913d99d", "Proveedor", "PROVEEDOR" },
+                    { 1, "3d48663b-b45b-45a7-9a12-09bca4de465b", "Cliente", "CLIENTE" }
                 });
 
             migrationBuilder.InsertData(
@@ -1534,6 +1548,16 @@ namespace serverdespacho.Migrations
                 column: "IdEstado");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Despachos_IdMunicipioDestino",
+                table: "Despachos",
+                column: "IdMunicipioDestino");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Despachos_IdMunicipioOrigen",
+                table: "Despachos",
+                column: "IdMunicipioOrigen");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Despachos_IdUsuario",
                 table: "Despachos",
                 column: "IdUsuario");
@@ -1629,10 +1653,10 @@ namespace serverdespacho.Migrations
                 name: "Catalogos");
 
             migrationBuilder.DropTable(
-                name: "Municipios");
+                name: "EstadosDespachos");
 
             migrationBuilder.DropTable(
-                name: "EstadosDespachos");
+                name: "Municipios");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

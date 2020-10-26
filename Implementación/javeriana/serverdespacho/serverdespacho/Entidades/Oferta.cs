@@ -23,8 +23,7 @@ namespace serverdespacho.Entidades
         [Required]
         public DateTime FechaPostulacion { get; set; }
         
-        [Required]
-        public DateTime FechaFinalizacion { get; set; }
+        public DateTime? FechaFinalizacion { get; set; }
 
         [Required]
         public long Precio { get; set; }

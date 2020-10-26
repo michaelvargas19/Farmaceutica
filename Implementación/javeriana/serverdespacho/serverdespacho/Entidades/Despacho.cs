@@ -40,8 +40,18 @@ namespace serverdespacho.Entidades
 
         [ForeignKey("IdDespacho")]
         public ICollection<Oferta> Ofertas { get; set; }
-        
 
+        [Required]
+        [ForeignKey("MunicipioOrigen")]
+        public int IdMunicipioOrigen { get; set; }
+
+        public Municipio MunicipioOrigen { get; set; }
+
+        [Required]
+        [ForeignKey("MunicipioDestino")]
+        public int IdMunicipioDestino { get; set; }
+
+        public Municipio MunicipioDestino { get; set; }
 
     }
 }

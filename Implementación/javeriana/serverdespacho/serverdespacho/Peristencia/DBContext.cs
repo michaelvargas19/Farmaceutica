@@ -18,7 +18,7 @@ namespace serverdespacho.Peristencia
 
         public DbSet<AppLogAuthenticacionAPI> LogAuthenticacionAPI { get; set; }
         public DbSet<Catalogo> Catalogo { get; set; }
-        public DbSet<Departamento> Usuarios { get; set; }
+        public DbSet<Departamento> Departamentos { get; set; }
         public DbSet<Despacho> Despachos { get; set; }
         public DbSet<EstadoDespachos> EstadosDespachos { get; set; }
         public DbSet<EstadoOfertas> EstadosOfertas { get; set; }

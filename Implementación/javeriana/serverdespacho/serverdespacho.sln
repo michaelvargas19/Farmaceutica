@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "serverdespacho", "serverdes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutenticacionDTO", "AuthenticationDTO\AutenticacionDTO.csproj", "{A82610A2-5D2B-4063-8DE7-5D500E13848F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DespachosDTO", "DespachosDTO\DespachosDTO.csproj", "{33B56778-7742-421A-9243-1AC7EB1AABEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A82610A2-5D2B-4063-8DE7-5D500E13848F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A82610A2-5D2B-4063-8DE7-5D500E13848F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A82610A2-5D2B-4063-8DE7-5D500E13848F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33B56778-7742-421A-9243-1AC7EB1AABEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B56778-7742-421A-9243-1AC7EB1AABEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B56778-7742-421A-9243-1AC7EB1AABEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B56778-7742-421A-9243-1AC7EB1AABEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

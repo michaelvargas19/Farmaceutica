@@ -30,6 +30,7 @@ namespace serverdespacho.Controllers
             return negocio.verUsuarios();
         }
 
+        // GET: api/Usuarios/#
         [HttpGet("{userName}")]
         public UsuarioDTO GetUser(string userName)
         {
