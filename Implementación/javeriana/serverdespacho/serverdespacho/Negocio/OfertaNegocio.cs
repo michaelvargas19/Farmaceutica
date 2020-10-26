@@ -178,16 +178,22 @@ namespace serverdespacho.Negocio
                 if (estado != null)
                 {
 
-                    Oferta oferta = DBContext.Ofertas.Where(d => d.IdOferta == request.IdOferta).Include(d => d.Estado).FirstOrDefault();
+                    Oferta oferta = DBContext.Ofertas.Where(d => d.IdOferta == request.IdOferta).Include(d => d.Estado).Include(d=> d.Despacho).FirstOrDefault();
 
                     if (oferta != null)
                     {
-                        if ((request.IdEstado == 3) && (request.IdEstado == 5))
+                        if ((request.IdEstado == 3) || (request.IdEstado == 4) || (request.IdEstado == 5))
                         {
-                            if ((oferta.IdEstado == 1))
+                            if ((oferta.IdEstado == 1) || (oferta.IdEstado == 2))
                             {
 
-                                oferta.Estado = estado;
+                                if(request.IdEstado == 4)
+                                {
+                                    //Despacho Entregado
+                                    oferta.Despacho.IdEstado = 6;
+                                }
+
+                                oferta.IdEstado = estado.IdEstado;
                                 DBContext.Entry(oferta);
                                 DBContext.SaveChanges();
 

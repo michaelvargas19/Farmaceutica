@@ -6603,7 +6603,6 @@ namespace serverdespacho.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<DateTime?>("FechaFinalizacion")
-                        .IsRequired()
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<DateTime>("FechaPostulacion")
@@ -6663,14 +6662,14 @@ namespace serverdespacho.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "3d48663b-b45b-45a7-9a12-09bca4de465b",
+                            ConcurrencyStamp = "c8c37838-27f8-4e72-9660-42a3c3f2b441",
                             Name = "Cliente",
                             NormalizedName = "CLIENTE"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "2d1e5dfa-c345-4ff2-b7c2-81ab1913d99d",
+                            ConcurrencyStamp = "aa04810e-ca16-4093-9d6e-23a48d5da124",
                             Name = "Proveedor",
                             NormalizedName = "PROVEEDOR"
                         });

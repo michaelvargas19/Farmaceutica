@@ -54,13 +54,6 @@ namespace serverdespacho.Controllers
                 return response;
             }
 
-            //if (String.IsNullOrEmpty(token.Abreviacion))
-            //{
-            //    Response.StatusCode = 202;
-            //    response.Mensaje = token.Token;
-            //    return response;
-            //}
-
             //LDAP Account Locked
             if (String.IsNullOrEmpty(token.Token))
             {

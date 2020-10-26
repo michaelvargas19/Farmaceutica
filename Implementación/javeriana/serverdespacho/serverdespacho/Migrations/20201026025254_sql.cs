@@ -392,7 +392,7 @@ namespace serverdespacho.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     IdUsuario = table.Column<int>(nullable: false),
                     FechaPostulacion = table.Column<DateTime>(nullable: false),
-                    FechaFinalizacion = table.Column<DateTime>(nullable: false),
+                    FechaFinalizacion = table.Column<DateTime>(nullable: true),
                     Precio = table.Column<long>(nullable: false),
                     IdEstado = table.Column<int>(nullable: false),
                     IdDespacho = table.Column<int>(nullable: false)
@@ -425,8 +425,8 @@ namespace serverdespacho.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 2, "2d1e5dfa-c345-4ff2-b7c2-81ab1913d99d", "Proveedor", "PROVEEDOR" },
-                    { 1, "3d48663b-b45b-45a7-9a12-09bca4de465b", "Cliente", "CLIENTE" }
+                    { 2, "aa04810e-ca16-4093-9d6e-23a48d5da124", "Proveedor", "PROVEEDOR" },
+                    { 1, "c8c37838-27f8-4e72-9660-42a3c3f2b441", "Cliente", "CLIENTE" }
                 });
 
             migrationBuilder.InsertData(

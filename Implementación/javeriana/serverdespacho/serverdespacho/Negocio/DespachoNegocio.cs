@@ -147,6 +147,65 @@ namespace serverdespacho.Negocio
         }
 
 
+        public ResultadoResponse seleccionarOferta(RequestSeleccionarOferta request)
+        {
+
+            ResultadoResponse resultado = new ResultadoResponse();
+            resultado.Proceso = "Seleccionar Oferta";
+            resultado.Exitoso = false;
+
+            try
+            {
+                Despacho despacho = DBContext.Despachos.Where(d => d.IdDespacho == request.IdDespacho).FirstOrDefault();               
+
+                if (despacho != null)
+                {
+
+                    Oferta oferta = DBContext.Ofertas.Where(o => o.IdOferta == request.IdOferta && o.IdEstado == 1).FirstOrDefault();
+
+                    if (oferta != null)
+                    {
+                        //Despacho cerrado
+                        despacho.IdEstado = 3;
+                        
+                        //Oferta Aceptada
+                        oferta.IdEstado = 2;
+
+                        List<Oferta> ofertas = DBContext.Ofertas.Where(o=> o.IdDespacho == despacho.IdDespacho && o.IdEstado == 1 && o.IdOferta != oferta.IdOferta).ToList();
+
+                        foreach (Oferta o in ofertas) {
+                            o.IdEstado = 3;
+                            DBContext.Entry(o);
+                        }
+
+                        DBContext.Entry(despacho);
+                        DBContext.Entry(oferta);
+                        DBContext.SaveChanges();
+
+                        resultado.Mensaje = "Oferta Cerrada";
+                        resultado.Exitoso = true;
+                    }
+                    else
+                    {
+                        resultado.Mensaje = "La oferta no existe";
+                    }
+                }
+                else
+                {
+                    resultado.Mensaje = "El despacho no existe";
+                }
+
+            }
+            catch (Exception e)
+            {
+                resultado.Mensaje = e.Message;
+            }
+
+            return resultado;
+
+        }
+
+
         public ResultadoResponse actualizarEstado(RequestEstadoDespacho request)
         {
 
@@ -165,15 +224,15 @@ namespace serverdespacho.Negocio
                     
                     if (despacho != null) 
                     {
-                        if ((request.IdEstado==3) && (request.IdEstado == 5)) { 
+                        if ((request.IdEstado==4) || (request.IdEstado == 5) || (request.IdEstado == 6)) { 
 
-                            if ((despacho.IdEstado==3) && (despacho.IdEstado == 4) && (despacho.IdEstado == 5)) {
+                            if ((despacho.IdEstado==3) || (despacho.IdEstado == 4) || (despacho.IdEstado == 5)) {
                         
                                 despacho.Estado = estado;
                                 DBContext.Entry(despacho);
                                 DBContext.SaveChanges();
 
-                                resultado.Mensaje = "Despacho ofertado";
+                                resultado.Mensaje = "Despacho Actualizado";
                                 resultado.Exitoso = true;
                             }
                             else

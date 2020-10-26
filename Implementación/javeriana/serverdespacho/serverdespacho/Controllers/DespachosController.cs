@@ -49,6 +49,14 @@ namespace serverdespacho.Controllers
         public ResultadoResponse OfertarDespacho(DespachoRequest request)
         {
             return negocio.ofertarDespacho(request);
+        }    
+
+        // POST: api/Despachos
+
+        [HttpPost("seleccionar")]
+        public ResultadoResponse SeleccionarOferta(RequestSeleccionarOferta request)
+        {
+            return negocio.seleccionarOferta(request);
         }
 
         // PUT: api/Despachos/estado
