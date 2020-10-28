@@ -1,0 +1,15 @@
+ts\despachos\server\integracion\proxyNotificaciones\CabeceraIntegracion.class
+ts\despachos\server\control\Prueba.class
+ts\despachos\server\integracion\proxyNotificaciones\USNotificacionesPortType.class
+ts\despachos\server\TSDespachosServerApplication.class
+ts\despachos\server\notificaciones\TareaNotificaciones.class
+ts\despachos\server\integracion\proxyNotificaciones\package-info.class
+ts\despachos\server\integracion\proxyNotificaciones\Resultado.class
+ts\despachos\server\persistencia\DAODespachos.class
+ts\despachos\server\integracion\proxyNotificaciones\EnviarNotificacionRequest.class
+ts\despachos\server\dto\DTODespacho.class
+ts\despachos\server\integracion\proxyNotificaciones\USNotificacionesService.class
+ts\despachos\server\integracion\proxyNotificaciones\EnviarNotificacionResponse.class
+ts\despachos\server\integracion\proxyNotificaciones\ObjectFactory.class
+ts\despachos\server\integracion\proxyNotificaciones\Notificacion.class
+ts\despachos\server\control\Temporizador.class
