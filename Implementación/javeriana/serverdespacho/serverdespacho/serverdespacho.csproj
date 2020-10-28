@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>9abe95fe-e000-4b9f-8230-22dadfcb425f</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -56,6 +57,8 @@
     <Compile Remove="Migrations\20201026025254_sql.Designer.cs" />
     <Compile Remove="Migrations\20201027041440_sql.cs" />
     <Compile Remove="Migrations\20201027041440_sql.Designer.cs" />
+    <Compile Remove="Migrations\20201027062325_sql.cs" />
+    <Compile Remove="Migrations\20201027062325_sql.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -77,10 +80,6 @@
   <ItemGroup>
     <ProjectReference Include="..\AuthenticationDTO\AutenticacionDTO.csproj" />
     <ProjectReference Include="..\DespachosDTO\DespachosDTO.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 

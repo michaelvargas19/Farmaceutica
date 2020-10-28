@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "om5XF4xMth2n7ix1/EzH1cgNG2XTDr6zvv1EdO+0RTiH75PjE1pKxHGv1Vp+yYklMHLIsqIQo7v3FXUD554PhA==",
+  "dgSpecHash": "CMrZqW0VlBvNf144Ch+6+O7LoYC+NaEMybNHEkeAN1aknH9quWT1sfDr1Y+DaiRC6QKgITLYQbMzWTh9c4nppA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ma.vargas\\Documents\\GitHub\\Farmaceutica\\Implementación\\javeriana\\serverdespacho\\AuthenticationDTO\\AutenticacionDTO.csproj",
+  "projectFilePath": "C:\\Users\\testfarmaceutica\\Documents\\GitHub\\Farmaceutica-AE\\Implementación\\javeriana\\serverdespacho\\AuthenticationDTO\\AutenticacionDTO.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

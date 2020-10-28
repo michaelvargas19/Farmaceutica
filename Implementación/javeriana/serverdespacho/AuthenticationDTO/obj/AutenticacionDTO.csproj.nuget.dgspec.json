@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ma.vargas\\Documents\\GitHub\\Farmaceutica\\Implementación\\javeriana\\serverdespacho\\AuthenticationDTO\\AutenticacionDTO.csproj": {}
+    "C:\\Users\\testfarmaceutica\\Documents\\GitHub\\Farmaceutica-AE\\Implementación\\javeriana\\serverdespacho\\AuthenticationDTO\\AutenticacionDTO.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ma.vargas\\Documents\\GitHub\\Farmaceutica\\Implementación\\javeriana\\serverdespacho\\AuthenticationDTO\\AutenticacionDTO.csproj": {
+    "C:\\Users\\testfarmaceutica\\Documents\\GitHub\\Farmaceutica-AE\\Implementación\\javeriana\\serverdespacho\\AuthenticationDTO\\AutenticacionDTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ma.vargas\\Documents\\GitHub\\Farmaceutica\\Implementación\\javeriana\\serverdespacho\\AuthenticationDTO\\AutenticacionDTO.csproj",
+        "projectUniqueName": "C:\\Users\\testfarmaceutica\\Documents\\GitHub\\Farmaceutica-AE\\Implementación\\javeriana\\serverdespacho\\AuthenticationDTO\\AutenticacionDTO.csproj",
         "projectName": "AutenticacionDTO",
-        "projectPath": "C:\\Users\\ma.vargas\\Documents\\GitHub\\Farmaceutica\\Implementación\\javeriana\\serverdespacho\\AuthenticationDTO\\AutenticacionDTO.csproj",
-        "packagesPath": "C:\\Users\\ma.vargas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ma.vargas\\Documents\\GitHub\\Farmaceutica\\Implementación\\javeriana\\serverdespacho\\AuthenticationDTO\\obj\\",
+        "projectPath": "C:\\Users\\testfarmaceutica\\Documents\\GitHub\\Farmaceutica-AE\\Implementación\\javeriana\\serverdespacho\\AuthenticationDTO\\AutenticacionDTO.csproj",
+        "packagesPath": "C:\\Users\\testfarmaceutica\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\testfarmaceutica\\Documents\\GitHub\\Farmaceutica-AE\\Implementación\\javeriana\\serverdespacho\\AuthenticationDTO\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ma.vargas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\testfarmaceutica\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -56,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

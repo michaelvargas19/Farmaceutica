@@ -6662,14 +6662,14 @@ namespace serverdespacho.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "73a0a8fc-4b9f-4f0c-b705-bc6b70cc53b4",
+                            ConcurrencyStamp = "21ce7a2f-3769-42a6-83e8-d31b3a48c360",
                             Name = "Cliente",
                             NormalizedName = "CLIENTE"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "82190427-3e6b-4436-9f2a-906ce91ec435",
+                            ConcurrencyStamp = "a38a27cd-8668-4467-8084-35f6195e3e3c",
                             Name = "Proveedor",
                             NormalizedName = "PROVEEDOR"
                         });
