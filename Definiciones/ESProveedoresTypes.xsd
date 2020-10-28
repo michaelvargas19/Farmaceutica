@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://javeriana.esproveedores/service/v1.0.0/b2b" xmlns:tns="http://javeriana.esproveedores/service/v1.0.0/b2b" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="cabecera" nillable="true" type="tns:cabeceraIntegracion"/>
+
+  <xs:element name="notificarCatalogoRequest" type="tns:notificarCatalogoRequest"/>
+  <xs:element name="notificarCatalogoResponse" type="tns:notificarCatalogoResponse"/>
+
+  <xs:element name="notificarOfertaRequest" type="tns:notificarOfertaRequest"/>
+  <xs:element name="notificarOfertaResponse" type="tns:notificarOfertaResponse"/>
+
+  <xs:complexType name="notificarCatalogoRequest">
+    <xs:sequence>
+        <xs:element name="catalogo" type="tns:catalogo" nillable="true" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cabeceraIntegracion">
+    <xs:sequence>
+      <xs:element name="pass" type="xs:string" minOccurs="1"/>
+      <xs:element name="user" type="xs:string" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="notificarCatalogoResponse">
+    <xs:complexContent>
+        <xs:extension base="tns:resultado"/>
+      </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="resultado">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:string" minOccurs="1"/>
+      <xs:element name="mensaje" type="xs:string" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="catalogo">
+    <xs:sequence>      
+      <xs:element name="idCatalogo" type="xs:string" minOccurs="1"/>
+      <xs:element name="idUsuario" type="xs:string" minOccurs="1"/>
+      <xs:element name="nombre" type="xs:string" minOccurs="1"/>
+      <xs:element name="servicios" type="tns:servicio" nillable="true" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="servicio">
+    <xs:sequence>      
+      <xs:element name="idServicio" type="xs:string" minOccurs="1"/>
+      <xs:element name="idCatalogo" type="xs:string" minOccurs="1"/>
+      <xs:element name="nombre" type="xs:string" minOccurs="1"/>
+      <xs:element name="descripcion" type="xs:string" minOccurs="1"/>
+      <xs:element name="idCiudadOrigen" type="xs:string" minOccurs="1"/>
+      <xs:element name="idCiudadDestino" type="xs:string" minOccurs="1"/>
+      <xs:element name="precio" type="xs:double" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="notificarOfertaRequest">
+    <xs:sequence>
+        <xs:element name="oferta" type="tns:oferta" nillable="true" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="notificarOfertaResponse">
+    <xs:complexContent>
+        <xs:extension base="tns:resultado"/>
+      </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="oferta">
+    <xs:sequence>      
+      <xs:element name="idOferta" type="xs:string" minOccurs="1"/>
+      <xs:element name="idUsuario" type="xs:string" minOccurs="1"/>
+      <xs:element name="precio" type="xs:double" minOccurs="1"/>   
+      <xs:element name="idDespacho" type="xs:string" minOccurs="1"/>    
+    </xs:sequence>
+  </xs:complexType>
+ 
+</xs:schema>
