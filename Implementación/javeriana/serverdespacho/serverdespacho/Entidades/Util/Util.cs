@@ -1,7 +1,9 @@
 ﻿using AutenticacionDTO.DTO;
 using AutenticacionDTO.DTO.Cuentas;
+using DespachosDTO.Catalogos;
 using DespachosDTO.Despachos;
 using DespachosDTO.Ofertas;
+using DespachosDTO.Servicios;
 using Microsoft.CodeAnalysis.CSharp;
 using Newtonsoft.Json;
 using System;
@@ -129,14 +131,53 @@ namespace serverdespacho.Entidades.Util
         public static Oferta castOfertaToEntity(OfertarRequest request, Usuario usuario, EstadoOfertas estado, Despacho despacho)
         {
             Oferta oferta = new Oferta();
-            oferta.Usuario = usuario;
+            oferta.IdUsuario = usuario.Id;
             oferta.FechaPostulacion = DateTime.Now; ;
             oferta.FechaFinalizacion = null;
             oferta.Precio = request.Precio;
-            oferta.Estado = estado;
-            oferta.Despacho = despacho;
+            oferta.IdEstado = estado.IdEstado;
+            oferta.IdDespacho = despacho.IdDespacho;
             
             return oferta;
+        }
+
+
+        //------------- [catalogos]
+
+        public static CatalogosDTO getCatalogoDTO(Catalogo catalogo)
+        {
+
+            CatalogosDTO dto = new CatalogosDTO();
+            dto.IdCatalogo = catalogo.IdCatalogo;
+            dto.Nombre = catalogo.Nombre;
+            dto.FechaCreacion = catalogo.FechaCreacion;
+            dto.Servicios = new List<ServicioDTO>();
+
+            foreach(Servicio s in catalogo.Servicios)
+            {
+                dto.Servicios.Add(getServicioDTO(s));
+            }
+
+                        
+            return dto;
+        }
+
+
+        //------------- [Servicios]
+
+        public static ServicioDTO getServicioDTO(Servicio servicio)
+        {
+
+            ServicioDTO dto = new ServicioDTO();
+            dto.IdServicio = servicio.IdServicio;
+            dto.IdCatalogo = servicio.IdCatalogo;
+            dto.Nombre = servicio.Nombre;
+            dto.Descripcion = servicio.Descripcion;
+            dto.IdMunicipioOrigen = servicio.IdMunicipioOrigen;
+            dto.IdMunicipioDestino = servicio.IdMunicipioDestino;
+            dto.Precio = servicio.Precio;
+            
+            return dto;
         }
 
 

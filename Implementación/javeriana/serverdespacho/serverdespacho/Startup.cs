@@ -5,10 +5,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using serverdespacho.Entidades;
 using serverdespacho.Negocio;
 using serverdespacho.Peristencia;
 using serverdespacho.Seguridad;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace serverdespacho
 {
@@ -29,6 +33,9 @@ namespace serverdespacho
             services.AddTransient<NotificacionNegocio, NotificacionNegocio>();
             services.AddTransient<OfertaNegocio, OfertaNegocio>();
             services.AddTransient<UsuarioNegocio, UsuarioNegocio>();
+            services.AddTransient<ConfiguracionNegocio, ConfiguracionNegocio>();
+            services.AddTransient<CatalogoNegocio, CatalogoNegocio>();
+            services.AddTransient<ServicioNegocio, ServicioNegocio>();
 
             services.AddIdentity<Usuario, Rol>(options =>
             {
@@ -69,6 +76,38 @@ namespace serverdespacho
                     });
             });
 
+
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "JWT Authentication API",
+                    Description = "API to authentication with JWT.",
+                    TermsOfService = new Uri("https://scare.org.co/politica-privacidad/"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "S.C.A.R.E.",
+                        Email = "servicioalcliente@scare.org.co",
+                        Url = new Uri("https://scare.org.co/"),
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "License",
+                        Url = new Uri("https://scare.org.co/politica-privacidad/"),
+                    }
+
+                });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+
+            });
+
+
             services.AddControllers();
         }
 
@@ -84,11 +123,21 @@ namespace serverdespacho
 
             app.UseRouting();
 
+            //Swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.DocumentTitle = "API Autenticación";
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "JWT Auth API");
+                c.RoutePrefix = String.Empty;
+            });
             //Enable CORS
             app.UseCors("AllowAll");
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            
 
             app.UseEndpoints(endpoints =>
             {

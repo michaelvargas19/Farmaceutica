@@ -27,9 +27,6 @@ namespace serverdespacho.Entidades
         public string Descripcion { get; set; }
 
         [Required]
-        public int IdCiudadOrigen { get; set; }
-
-        [Required]
         [ForeignKey("MunicipioOrigen")]
         public int IdMunicipioOrigen { get; set; }
 

@@ -1,8 +1,3 @@
-C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.csprojAssemblyReference.cache
-C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.AssemblyInfoInputs.cache
-C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.AssemblyInfo.cs
-C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.csproj.CoreCompileInputs.cache
-C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -12,6 +7,7 @@ C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serve
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\serverdespacho.runtimeconfig.dev.json
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\serverdespacho.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\serverdespacho.pdb
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\serverdespacho.xml
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
@@ -55,6 +51,7 @@ C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serve
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -74,6 +71,9 @@ C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serve
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\Renci.SshNet.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.dll
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
@@ -147,7 +147,15 @@ C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serve
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\AutenticacionDTO.dll
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\DespachosDTO.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\AutenticacionDTO.pdb
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\DespachosDTO.pdb
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.csprojAssemblyReference.cache
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.AssemblyInfoInputs.cache
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.AssemblyInfo.cs
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.csproj.CoreCompileInputs.cache
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.RazorTargetAssemblyInfo.cache
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.csproj.CopyComplete
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\staticwebassets\serverdespacho.StaticWebAssets.Manifest.cache
@@ -155,5 +163,3 @@ C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serve
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.dll
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.pdb
 C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\obj\Debug\netcoreapp3.1\serverdespacho.genruntimeconfig.cache
-C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\DespachosDTO.dll
-C:\Users\ma.vargas\Documents\GitHub\Farmaceutica\Implementación\javeriana\serverdespacho\serverdespacho\bin\Debug\netcoreapp3.1\DespachosDTO.pdb

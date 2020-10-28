@@ -109,7 +109,7 @@ namespace serverdespacho.Negocio
         public ResultadoResponse ofertarDespacho(DespachoRequest request) {
 
             ResultadoResponse resultado = new ResultadoResponse();
-            resultado.Proceso = "Ofertar Servicio";
+            resultado.Proceso = "Ofertar Despacho";
             resultado.Exitoso = false;
 
             try { 
@@ -122,19 +122,45 @@ namespace serverdespacho.Negocio
 
                 if (estado != null) {
 
-                    Despacho despacho = Util.castDespachoToEntity(request,usuario,estado);
-                    DBContext.Despachos.Add(despacho);
-                    DBContext.SaveChanges();
+                    if ((DBContext.Municipios.Any(m => m.CodigoDane == request.IdMunicipioOrigen)) && (DBContext.Municipios.Any(m => m.CodigoDane == request.IdMunicipioDestino)))
+                    {
+                        Despacho despacho = Util.castDespachoToEntity(request, usuario, estado);
+                        DBContext.Despachos.Add(despacho);
 
-                    resultado.Mensaje = "Despacho ofertado";
-                    resultado.Exitoso = true;
+                        List<Usuario> usuarios = userManager.GetUsersInRoleAsync("Proveedor").Result.ToList();
+
+                        foreach (Usuario u in usuarios)
+                        {
+                            //Notificar publicación del despacho
+                            Notificacion notificacion = new Notificacion();
+                            notificacion.IdUsuario = u.Id;
+                            notificacion.IdTipoNotificacion = 1;
+                            notificacion.Mensaje = "Se ha ofertado un nuevo despacho llamada: "+ despacho.Nombre;
+                            notificacion.MensajeCorto = "Se ha ofertado un nuevo despacho";
+                            notificacion.FechaEnvio = DateTime.Now;
+                            notificacion.Entregada = false;
+
+                            DBContext.Notificaciones.Add(notificacion);
+                        }
+                        
+
+                        DBContext.SaveChanges();
+
+                        resultado.Mensaje = "Despacho ofertado";
+                        resultado.Exitoso = true;
+
+                        }
+                    else {
+                        resultado.Mensaje = "Los municipios son incorrectos";
+                    }
+                         
                 }
                 else {
                     resultado.Mensaje = "No existe el estado a asignar";
                 }
             }   
             else {
-                resultado.Mensaje = "El usuario no existe";
+                resultado.Mensaje = "El proveedor no existe";
             }
 
             }
@@ -161,15 +187,16 @@ namespace serverdespacho.Negocio
                 if (despacho != null)
                 {
 
-                    Oferta oferta = DBContext.Ofertas.Where(o => o.IdOferta == request.IdOferta && o.IdEstado == 1).FirstOrDefault();
+                    Oferta oferta = DBContext.Ofertas.Where(o => o.IdOferta == request.IdOferta && o.IdEstado == 1).Include(o=> o.Usuario).FirstOrDefault();
 
                     if (oferta != null)
                     {
-                        //Despacho cerrado
+                        //Despacho cerrado de ofertas
                         despacho.IdEstado = 3;
                         
                         //Oferta Aceptada
                         oferta.IdEstado = 2;
+
 
                         List<Oferta> ofertas = DBContext.Ofertas.Where(o=> o.IdDespacho == despacho.IdDespacho && o.IdEstado == 1 && o.IdOferta != oferta.IdOferta).ToList();
 
@@ -177,6 +204,17 @@ namespace serverdespacho.Negocio
                             o.IdEstado = 3;
                             DBContext.Entry(o);
                         }
+
+                        //Notificar aceptación de oferta
+                        Notificacion notificacion = new Notificacion();
+                        notificacion.IdUsuario = oferta.Usuario.Id;
+                        notificacion.IdTipoNotificacion = 1;
+                        notificacion.Mensaje = "Se ha aceptado la oferta hecha al servicio " + despacho.Nombre;
+                        notificacion.MensajeCorto = "Se ha aceptado una de tus ofertas";
+                        notificacion.FechaEnvio = DateTime.Now;
+                        notificacion.Entregada = false;
+
+                        DBContext.Notificaciones.Add(notificacion);
 
                         DBContext.Entry(despacho);
                         DBContext.Entry(oferta);
@@ -210,6 +248,7 @@ namespace serverdespacho.Negocio
         {
 
             ResultadoResponse resultado = new ResultadoResponse();
+            resultado.Proceso = "Actualizar Estado";
             resultado.Exitoso = false;
 
             try

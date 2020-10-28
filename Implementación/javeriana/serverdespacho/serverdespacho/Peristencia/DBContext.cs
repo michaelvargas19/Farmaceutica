@@ -23,7 +23,7 @@ namespace serverdespacho.Peristencia
         public DbSet<EstadoDespachos> EstadosDespachos { get; set; }
         public DbSet<EstadoOfertas> EstadosOfertas { get; set; }
         public DbSet<Municipio> Municipios { get; set; }
-        public DbSet<Notificacion> Notificacions { get; set; }
+        public DbSet<Notificacion> Notificaciones { get; set; }
         public DbSet<Oferta> Ofertas { get; set; }
         public DbSet<Servicio> Servicios { get; set; }
         public DbSet<TipoNotificacion> TiposNotificaciones { get; set; }
@@ -33,6 +33,17 @@ namespace serverdespacho.Peristencia
         {
             base.OnModelCreating(builder);
            
+            //Insert Tipo Notificación
+
+            builder.Entity<TipoNotificacion>().HasData(
+                        new TipoNotificacion() { IdTipoNotificacion=1, Nombre="Email" }
+                       );
+            
+            builder.Entity<TipoNotificacion>().HasData(
+                        new TipoNotificacion() { IdTipoNotificacion=2, Nombre="SMS" }
+                       );
+
+            
             //Insert Rol
             builder.Entity<Rol>().HasData(
                         new Rol() { Id = 1, Name = "Cliente", NormalizedName = "CLIENTE" }

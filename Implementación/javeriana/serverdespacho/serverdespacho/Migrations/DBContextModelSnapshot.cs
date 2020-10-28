@@ -6662,14 +6662,14 @@ namespace serverdespacho.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "c8c37838-27f8-4e72-9660-42a3c3f2b441",
+                            ConcurrencyStamp = "73a0a8fc-4b9f-4f0c-b705-bc6b70cc53b4",
                             Name = "Cliente",
                             NormalizedName = "CLIENTE"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "aa04810e-ca16-4093-9d6e-23a48d5da124",
+                            ConcurrencyStamp = "82190427-3e6b-4436-9f2a-906ce91ec435",
                             Name = "Proveedor",
                             NormalizedName = "PROVEEDOR"
                         });
@@ -6687,9 +6687,6 @@ namespace serverdespacho.Migrations
                         .HasColumnType("text");
 
                     b.Property<int>("IdCatalogo")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("IdCiudadOrigen")
                         .HasColumnType("integer");
 
                     b.Property<int>("IdMunicipioDestino")
@@ -6730,6 +6727,18 @@ namespace serverdespacho.Migrations
                     b.HasKey("IdTipoNotificacion");
 
                     b.ToTable("TiposNotificaciones");
+
+                    b.HasData(
+                        new
+                        {
+                            IdTipoNotificacion = 1,
+                            Nombre = "Email"
+                        },
+                        new
+                        {
+                            IdTipoNotificacion = 2,
+                            Nombre = "SMS"
+                        });
                 });
 
             modelBuilder.Entity("serverdespacho.Entidades.Usuario", b =>

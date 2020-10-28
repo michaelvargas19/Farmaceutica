@@ -47,7 +47,7 @@ namespace serverdespacho.Controllers
         [HttpPost]
         public ResultadoResponse OfertarDespacho(OfertarRequest request)
         {
-            return negocio.ofertarEnDespacho(request);
+            return negocio.hacerOfertaADespacho(request);
         }
 
         // PUT: api/Ofertas/estado

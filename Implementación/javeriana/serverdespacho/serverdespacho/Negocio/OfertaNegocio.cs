@@ -105,10 +105,11 @@ namespace serverdespacho.Negocio
         }
 
 
-        public ResultadoResponse ofertarEnDespacho(OfertarRequest request)
+        public ResultadoResponse hacerOfertaADespacho(OfertarRequest request)
         {
 
             ResultadoResponse resultado = new ResultadoResponse();
+            resultado.Proceso = "Hacer Oferta";
             resultado.Exitoso = false;
 
             try
@@ -130,6 +131,17 @@ namespace serverdespacho.Negocio
                         {
 
                             Oferta oferta = Util.castOfertaToEntity(request, usuario, estado,despacho);
+
+                            //Notificar al proveedor solicitud de servicio
+                            Notificacion notificacion = new Notificacion();
+                            notificacion.IdUsuario = oferta.IdUsuario;
+                            notificacion.IdTipoNotificacion = 1;
+                            notificacion.Mensaje = "Se ha hecho una nueva oferta la despacho " + despacho.Nombre;
+                            notificacion.MensajeCorto = "Se ha hecho una nueva oferta";
+                            notificacion.FechaEnvio = DateTime.Now;
+                            notificacion.Entregada = false;
+
+                            DBContext.Notificaciones.Add(notificacion);
                             DBContext.Ofertas.Add(oferta);
                             DBContext.SaveChanges();
 
@@ -155,7 +167,7 @@ namespace serverdespacho.Negocio
             catch (Exception e)
             {
                 resultado.Mensaje = e.Message;
-                DBContext.Log(Util.crearLog("Error", "Despachos", nameof(this.ofertarEnDespacho), true, this, e.Message, e.StackTrace.ToString()));
+                DBContext.Log(Util.crearLog("Error", "Despachos", nameof(this.hacerOfertaADespacho), true, this, e.Message, e.StackTrace.ToString()));
             }
 
             return resultado;
@@ -168,6 +180,7 @@ namespace serverdespacho.Negocio
         {
 
             ResultadoResponse resultado = new ResultadoResponse();
+            resultado.Proceso = "Actualizar Estado";
             resultado.Exitoso = false;
 
             try
@@ -178,7 +191,7 @@ namespace serverdespacho.Negocio
                 if (estado != null)
                 {
 
-                    Oferta oferta = DBContext.Ofertas.Where(d => d.IdOferta == request.IdOferta).Include(d => d.Estado).Include(d=> d.Despacho).FirstOrDefault();
+                    Oferta oferta = DBContext.Ofertas.Where(d => d.IdOferta == request.IdOferta).Include(d => d.Estado).Include(d=> d.Despacho).ThenInclude(d=>d.Usuario).FirstOrDefault();
 
                     if (oferta != null)
                     {
@@ -191,6 +204,17 @@ namespace serverdespacho.Negocio
                                 {
                                     //Despacho Entregado
                                     oferta.Despacho.IdEstado = 6;
+
+                                    //Notificar aceptación de oferta
+                                    Notificacion notificacion = new Notificacion();
+                                    notificacion.IdUsuario = oferta.Despacho.Usuario.Id;
+                                    notificacion.IdTipoNotificacion = 1;
+                                    notificacion.Mensaje = "Se ha cerrado la oferta " + oferta.Despacho.Nombre;
+                                    notificacion.MensajeCorto = "Se ha cerrado una de tus ofertas";
+                                    notificacion.FechaEnvio = DateTime.Now;
+                                    notificacion.Entregada = false;
+
+                                    DBContext.Notificaciones.Add(notificacion);
                                 }
 
                                 oferta.IdEstado = estado.IdEstado;

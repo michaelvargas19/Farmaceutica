@@ -356,7 +356,6 @@ namespace serverdespacho.Migrations
                     IdCatalogo = table.Column<int>(nullable: false),
                     Nombre = table.Column<string>(nullable: false),
                     Descripcion = table.Column<string>(nullable: false),
-                    IdCiudadOrigen = table.Column<int>(nullable: false),
                     IdMunicipioOrigen = table.Column<int>(nullable: false),
                     IdMunicipioDestino = table.Column<int>(nullable: false),
                     Precio = table.Column<long>(nullable: false)
@@ -425,8 +424,8 @@ namespace serverdespacho.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 2, "aa04810e-ca16-4093-9d6e-23a48d5da124", "Proveedor", "PROVEEDOR" },
-                    { 1, "c8c37838-27f8-4e72-9660-42a3c3f2b441", "Cliente", "CLIENTE" }
+                    { 2, "82190427-3e6b-4436-9f2a-906ce91ec435", "Proveedor", "PROVEEDOR" },
+                    { 1, "73a0a8fc-4b9f-4f0c-b705-bc6b70cc53b4", "Cliente", "CLIENTE" }
                 });
 
             migrationBuilder.InsertData(
@@ -434,38 +433,38 @@ namespace serverdespacho.Migrations
                 columns: new[] { "CodigoDane", "Nombre", "Region" },
                 values: new object[,]
                 {
-                    { 99, "Vichada", "Región Llano" },
-                    { 97, "Vaupés", "Región Llano" },
-                    { 76, "Valle del Cauca", "Región Pacífico" },
-                    { 73, "Tolima", "Región Centro Sur" },
-                    { 70, "Sucre", "Región Caribe" },
-                    { 68, "Santander", "Región Centro Oriente" },
-                    { 66, "Risaralda", "Región Eje Cafetero - Antioquia" },
-                    { 63, "Quindío", "Región Eje Cafetero - Antioquia" },
-                    { 86, "Putumayo", "Región Centro Sur" },
-                    { 52, "Nariño", "Región Pacífico" },
-                    { 50, "Meta", "Región Llano" },
+                    { 91, "Amazonas", "Región Centro Sur" },
                     { 47, "Magdalena", "Región Caribe" },
+                    { 50, "Meta", "Región Llano" },
+                    { 52, "Nariño", "Región Pacífico" },
+                    { 54, "Norte de Santander", "Región Centro Oriente" },
+                    { 63, "Quindío", "Región Eje Cafetero - Antioquia" },
+                    { 66, "Risaralda", "Región Eje Cafetero - Antioquia" },
+                    { 68, "Santander", "Región Centro Oriente" },
+                    { 70, "Sucre", "Región Caribe" },
+                    { 73, "Tolima", "Región Centro Sur" },
+                    { 76, "Valle del Cauca", "Región Pacífico" },
+                    { 97, "Vaupés", "Región Llano" },
+                    { 99, "Vichada", "Región Llano" },
                     { 44, "La Guajira", "Región Caribe" },
                     { 41, "Huila", "Región Centro Sur" },
-                    { 54, "Norte de Santander", "Región Centro Oriente" },
+                    { 86, "Putumayo", "Región Centro Sur" },
                     { 94, "Guainía", "Región Llano" },
-                    { 5, "Antioquia", "Región Eje Cafetero - Antioquia" },
+                    { 81, "Arauca", "Región Llano" },
                     { 95, "Guaviare", "Región Llano" },
                     { 88, "Archipiélago de San Andrés, Providencia y Santa Catalina", "Región Caribe" },
                     { 8, "Atlántico", "Región Caribe" },
                     { 13, "Bolívar", "Región Caribe" },
                     { 15, "Boyacá", "Región Centro Oriente" },
                     { 17, "Caldas", "Región Eje Cafetero - Antioquia" },
-                    { 81, "Arauca", "Región Llano" },
-                    { 85, "Casanare", "Región Llano" },
                     { 18, "Caquetá", "Región Centro Sur" },
-                    { 25, "Cundinamarca", "Región Centro Oriente" },
-                    { 23, "Córdoba", "Región Caribe" },
-                    { 91, "Amazonas", "Región Centro Sur" },
-                    { 20, "Cesar", "Región Caribe" },
+                    { 85, "Casanare", "Región Llano" },
                     { 19, "Cauca", "Región Pacífico" },
-                    { 27, "Chocó", "Región Pacífico" }
+                    { 5, "Antioquia", "Región Eje Cafetero - Antioquia" },
+                    { 20, "Cesar", "Región Caribe" },
+                    { 27, "Chocó", "Región Pacífico" },
+                    { 23, "Córdoba", "Región Caribe" },
+                    { 25, "Cundinamarca", "Región Centro Oriente" }
                 });
 
             migrationBuilder.InsertData(
@@ -473,11 +472,11 @@ namespace serverdespacho.Migrations
                 columns: new[] { "IdEstado", "Nombre" },
                 values: new object[,]
                 {
-                    { 1, "Ofertando" },
-                    { 2, "Selección de Proveedor" },
-                    { 3, "Ofertas Cerrada" },
-                    { 5, "En Camino" },
                     { 6, "Entregado" },
+                    { 5, "En Camino" },
+                    { 1, "Ofertando" },
+                    { 3, "Ofertas Cerrada" },
+                    { 2, "Selección de Proveedor" },
                     { 4, "Preparando Envío" }
                 });
 
@@ -491,6 +490,15 @@ namespace serverdespacho.Migrations
                     { 3, "Rechazada" },
                     { 4, "Completada" },
                     { 5, "Cancelada" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "TiposNotificaciones",
+                columns: new[] { "IdTipoNotificacion", "Nombre" },
+                values: new object[,]
+                {
+                    { 1, "Email" },
+                    { 2, "SMS" }
                 });
 
             migrationBuilder.InsertData(
