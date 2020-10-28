@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions targetNamespace="http://javeriana.usnotificaciones/service/v1.0.0/notificaciones" name="USNotificacionesService" xmlns:tns="http://javeriana.usnotificaciones/service/v1.0.0/notificaciones" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://javeriana.usnotificaciones/service/v1.0.0/notificaciones" schemaLocation="USNotificacionesTypes.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="enviarNotificacionRequest">
+    <part name="cabecera" element="tns:cabecera"/>
+    <part name="parameters" element="tns:enviarNotificacionRequest"/>
+  </message>
+  <message name="enviarNotificacionResponse">
+    <part name="result" element="tns:enviarNotificacionResponse"/>
+  </message>
+  
+  <portType name="USNotificaciones_PortType">
+    <operation name="enviarNotificacion">
+      <input message="tns:enviarNotificacionRequest"/>
+      <output message="tns:enviarNotificacionResponse"/>
+    </operation>    
+  </portType>
+  <binding name="USNotificacionesServicePortBinding" type="tns:USNotificaciones_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="enviarNotificacion">
+      <soap:operation soapAction="enviarNotificacion"/>
+      <input>
+        <soap:body use="literal" parts="parameters"/>
+        <soap:header message="tns:enviarNotificacionRequest" part="cabecera" use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>   
+  </binding>
+  <service name="USNotificacionesService">
+    <port name="USNotificacionesPort" binding="tns:USNotificacionesServicePortBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

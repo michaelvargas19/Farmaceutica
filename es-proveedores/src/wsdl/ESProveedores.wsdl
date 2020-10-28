@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions targetNamespace="http://javeriana.esproveedores/service/v1.0.0/b2b" name="ESProveedoresService" xmlns:tns="http://javeriana.esproveedores/service/v1.0.0/b2b" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://javeriana.esproveedores/service/v1.0.0/b2b" schemaLocation="ESProveedoresTypes.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="notificarCatalogoRequest">
+    <part name="cabecera" element="tns:cabecera"/>
+    <part name="parameters" element="tns:notificarCatalogoRequest"/>
+  </message>
+  <message name="notificarCatalogoResponse">
+    <part name="result" element="tns:notificarCatalogoResponse"/>
+  </message>
+
+  <message name="notificarOfertaRequest">
+    <part name="cabecera" element="tns:cabecera"/>
+    <part name="parameters" element="tns:notificarOfertaRequest"/>
+  </message>
+  <message name="notificarOfertaResponse">
+    <part name="result" element="tns:notificarOfertaResponse"/>
+  </message>
+  
+  <portType name="ESProveedores_PortType">
+    <operation name="notificarCatalogo">
+      <input message="tns:notificarCatalogoRequest"/>
+      <output message="tns:notificarCatalogoResponse"/>
+    </operation>  
+
+    <operation name="notificarOferta">
+        <input message="tns:notificarOfertaRequest"/>
+        <output message="tns:notificarOfertaResponse"/>
+    </operation>  
+    
+  </portType>
+  <binding name="ESProveedoresServicePortBinding" type="tns:ESProveedores_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="notificarCatalogo">
+      <soap:operation soapAction="notificarCatalogo"/>
+      <input>
+        <soap:body use="literal" parts="parameters"/>
+        <soap:header message="tns:notificarCatalogoRequest" part="cabecera" use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation> 
+    
+    <operation name="notificarOferta">
+        <soap:operation soapAction="notificarOferta"/>
+        <input>
+          <soap:body use="literal" parts="parameters"/>
+          <soap:header message="tns:notificarOfertaRequest" part="cabecera" use="literal"/>
+        </input>
+        <output>
+          <soap:body use="literal"/>
+        </output>
+      </operation>   
+
+  </binding>
+  <service name="ESProveedoresService">
+    <port name="ESProveedoresPort" binding="tns:ESProveedoresServicePortBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>
